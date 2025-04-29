@@ -1,0 +1,159 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg_color_login"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/mll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <include
+            android:id="@+id/rl_title"
+            layout="@layout/title_layout" />
+    </LinearLayout>
+
+    <RelativeLayout
+
+        android:id="@+id/mllbottom"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true" >
+
+        <Button
+            android:id="@+id/mbtnUpdate"
+            android:layout_width="110dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:background="@color/main_color"
+            android:text="确认发送"
+            android:textColor="#ffffff" />
+
+        <EditText
+            android:id="@+id/replyMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请添加回复信息"
+            android:padding="15dp"
+            android:textColor="#666666"
+            android:textColorHint="#666666"
+            android:layout_toLeftOf="@id/mbtnUpdate"
+            android:textSize="14dp" />
+
+    </RelativeLayout>
+    <ScrollView
+        android:id="@+id/ss"
+        android:layout_above="@id/mllbottom"
+        android:layout_below="@id/mll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:background="#ffffff"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/userInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/guide_message"
+                            android:layout_marginLeft="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="messagmessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagee"
+                            android:textColor="#666666"
+                            android:textSize="14dp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+
+
+                android:background="#ffffff"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="回复信息："
+                        android:padding="15dp"
+                        android:textColor="#333333"
+                        android:textSize="16dp" />
+
+                    <com.clientBase.view.ListviewForScrollView
+                        android:id="@+id/mListReviewMessage"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="#ffffff"
+                        android:clickable="false"
+                        android:divider="@color/bg_color_login"
+                        android:dividerHeight="1dp"
+                        android:focusable="false"
+                        android:listSelector="@drawable/listview"
+                        android:padding="15dp"
+                        android:scrollbars="none"></com.clientBase.view.ListviewForScrollView>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#ffffff"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

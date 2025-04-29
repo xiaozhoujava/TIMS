@@ -1,0 +1,94 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/bg_color_login"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/mllsearch"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        android:layout_marginTop="15dp"
+        android:layout_height="50dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:gravity="center_vertical" >
+
+
+            <EditText
+                android:id="@+id/metName"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/mtvSearch"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="请输入搜索信息"
+                android:paddingLeft="10dp"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/searchInfor"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="搜索"
+                android:textColor="#333"
+                android:visibility="gone"
+                android:textSize="16dp"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical|center_horizontal"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <com.clientBase.refresh.JellyRefreshLayout
+        android:id="@+id/jelly_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="4dp"
+        android:text="loading"
+        app:headerHeight="48dp"
+        app:jellyColor="@color/main_color"
+        app:pullHeight="160dp"
+        app:triggerHeight="108dp">
+
+
+        <ListView
+            android:id="@+id/mListMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/bg_color_login"
+            android:dividerHeight="1dp"
+            android:layout_marginTop="10dp"
+            android:listSelector="@drawable/listview"
+
+            android:scrollbars="none" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/mivCreateMessage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="20dp"
+                android:padding="5dp"
+
+                android:src="@drawable/icon_add_logo" />
+        </RelativeLayout>
+
+
+
+
+    </com.clientBase.refresh.JellyRefreshLayout>
+
+
+</LinearLayout>

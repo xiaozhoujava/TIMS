@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.client">
+
+
+    <!--拍照-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--写入SD卡的权限：如果你希望保存相机拍照后的照片-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--读取SD卡的权限:打开相册选取图片所必须的权限-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--网络-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <application
+        android:name="com.clientBase.app.PonyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/iconlvyou"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.NoTitleBar" >
+
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="09f23fc57d064d924869c48b77058bd6" >
+        </meta-data>
+
+
+
+        <!-- 融云的key -->
+        <meta-data
+            android:name="RONG_CLOUD_APP_KEY"
+            android:value="8luwapkv8hkll" />
+
+
+        <activity android:name="com.clientUI.LoginActivity" android:theme="@style/DefaultCityPickerTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.clientUI.RegisterActivity"/>
+        <activity android:name="com.clientUI.FrameworkActivity" android:theme="@style/DefaultCityPickerTheme"/>
+        <activity android:name="com.clientUI.UserActivity"/>
+        <activity android:name="com.clientUI.UpdatePswdActivity"/>
+        <activity android:name="com.clientUI.SoftMessageActivity"/>
+        <activity android:name="com.clientUI.SearchlListActivity"/>
+        <activity android:name="com.clientUI.PhotoLookListActivity"/>
+        <activity android:name="com.clientUI.CreatImgActivity"/>
+        <activity android:name="com.clientUI.PhotoListActivity"/>
+        <activity android:name="com.clientUI.UserIndexActivity"/>
+        <activity android:name="com.clientUI.UserPersonActivity"/>
+
+
+        <activity android:name="com.clientUI.ReviewShareMessageActivity"/>
+        <activity android:name="com.clientUI.CreatActivity"/>
+        <activity android:name="com.clientUI.LikeListActivity"/>
+
+        <activity android:name="com.clientUI.PraiseNoticeActivity"/>
+        <activity android:name="com.clientUI.CollectNoticeActivity"/>
+        <activity android:name="com.clientUI.ReviewNoticeActivity"/>
+
+        <activity android:name="com.clientUI.MyTopicActivity"/>
+        <activity android:name="com.clientUI.UserMessageUpdateActivity"/>
+
+        <activity android:name="com.clientUI.CreatTopicActivity"/>
+        <activity android:name="com.clientUI.CourseMessageActivity"/>
+        <activity android:name="com.clientUI.NiMingReviewActivity"/>
+        <activity android:name="com.clientUI.TopicReviewActivity"/>
+        <activity android:name="com.clientUI.NewsMessageActivity"/>
+        <activity android:name="com.clientUI.CreatNiMingActivity"/>
+
+        <activity android:name="com.clientUI.ApplyCourseMessageActivity"/>
+        <activity android:name="com.clientUI.MyCourselyActivity"/>
+
+
+        <activity android:name="com.clientUI.SceneryMessageActivity"/>
+        <activity android:name="com.clientUI.PayShopMessageActivity"/>
+        <activity android:name="com.clientUI.MyOrderActivity"/>
+        <activity android:name="com.clientUI.OrderInforActivity"/>
+
+
+
+        <activity android:name="com.clientBase.photo.ui.SelectImagesActivity"/>
+        <activity android:name="com.clientBase.photo.ui.ShowPictureActivity"/>
+
+
+        <!-- imstart -->
+
+
+
+        <service
+            android:name="io.rong.push.PushService"
+            android:process="io.rong.push" >
+
+            <!-- Waring: The name of the push process can't be changed!!! -->
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="io.rong.push" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="io.rong.push.CommandService"
+            android:process="io.rong.push" >
+
+            <!-- Waring: The name of the push process can't be changed!!! -->
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="io.rong.command" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="io.rong.push.PushReceiver"
+            android:process="io.rong.push" >
+
+            <!-- Waring: The name of the push process can't be changed!!! -->
+            <intent-filter>
+                <action android:name="io.rong.imlib.action.push.heartbeat" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="io.rong.imlib.ipc.RongService"
+            android:process=":ipc" >
+        </service>
+        <service android:name="io.rong.imlib.ReConnectService" />
+
+        <receiver android:name="io.rong.imlib.ConnectChangeReceiver" />
+        <receiver android:name="io.rong.imlib.ipc.PushMessageReceiver" >
+            <intent-filter>
+                <action android:name="io.rong.push.message" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="io.rong.imlib.HeartbeatReceiver"
+            android:process=":ipc" />
+
+
+        <!-- imend -->
+
+        <!-- imchat -->
+        <activity
+            android:name="com.clientUI.ImChatActivity"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.client"
+                    android:pathPrefix="/conversation/"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

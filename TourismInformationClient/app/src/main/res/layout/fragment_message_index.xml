@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mlp="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_login"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <com.youth.banner.Banner
+                android:id="@+id/home_play_banner"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                mlp:indicator_height="@dimen/base10dp"
+                mlp:indicator_margin="@dimen/base3dp"
+                mlp:indicator_width="@dimen/base10dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/main_color"
+                android:orientation="vertical"
+                android:visibility="gone"></LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+
+                android:padding="15dp"
+                android:text="产品类型 "
+                android:textColor="#333"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <com.clientBase.view.GridviewForScrollView
+                android:id="@+id/mBookType"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:numColumns="2"></com.clientBase.view.GridviewForScrollView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="产品推荐 "
+                android:textColor="#333"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <com.clientBase.view.ListviewForScrollView
+                android:id="@+id/mListMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:divider="@color/bg_color_login"
+                android:dividerHeight="1dp"
+                android:listSelector="@drawable/listview"
+                android:scrollbars="none"></com.clientBase.view.ListviewForScrollView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="商品展示 "
+                android:textColor="#333"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <com.clientBase.view.ListviewForScrollView
+                android:id="@+id/mAllListMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:divider="@color/bg_color_login"
+                android:dividerHeight="1dp"
+                android:listSelector="@drawable/listview"
+                android:scrollbars="none"></com.clientBase.view.ListviewForScrollView>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

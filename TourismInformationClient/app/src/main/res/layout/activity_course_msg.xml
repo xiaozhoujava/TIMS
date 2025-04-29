@@ -1,0 +1,190 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg_color_login"
+    android:orientation="vertical"
+    tools:context=".UnLoginActiviy">
+
+    <LinearLayout
+        android:id="@+id/mll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <include
+            android:id="@+id/rl_title"
+            layout="@layout/title_sub_layout" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/mllbottom"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:layout_alignParentBottom="true"
+        >
+
+ <Button
+            android:id="@+id/mbtnPay"
+            android:layout_width="90dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:background="@color/main_color"
+            android:textColor="#ffffff" />
+        <Button
+            android:id="@+id/mbtnExame"
+            android:layout_width="90dp"
+            android:layout_marginRight="1dp"
+            android:layout_toLeftOf="@id/mbtnPay"
+            android:layout_height="fill_parent"
+            android:background="@color/main_color"
+            android:textColor="#ffffff" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_toLeftOf="@id/mbtnExame"
+            android:gravity="center_vertical|center_horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#333333"
+                android:text="老师姓名："
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/mtvShopPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ff0000"
+                android:text="pony"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/mllbottom"
+        android:layout_below="@id/mll"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/mtvtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="title"
+                        android:textColor="#333333"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/guide_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="25dp"
+                    android:src="@drawable/icon_online"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop" />
+
+
+                <LinearLayout
+                    android:id="@+id/mllInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="#ffffff"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:padding="15dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+
+                        <TextView
+                            android:id="@+id/infor1"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="center_vertical"
+                            android:lineSpacingExtra="3dp"
+                            android:lines="1"
+                            android:ellipsize="end"
+                            android:textColor="#666666"
+                            android:textSize="14dp" />
+                        <TextView
+                            android:id="@+id/infor3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"
+                            android:lineSpacingExtra="3dp"
+                            android:lines="1"
+                            android:ellipsize="end"
+                            android:textColor="#666666"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="3dp"
+                            android:text="课程介绍："
+                            android:textColor="#333"
+                            android:textSize="14dp" />
+
+
+                        <TextView
+                            android:id="@+id/infor2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="3dp"
+                            android:layout_marginTop="10dp"
+                            android:text="message"
+                            android:textColor="#666666"
+                            android:textSize="14dp" />
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+            
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
